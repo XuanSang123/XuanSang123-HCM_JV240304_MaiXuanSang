@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="container">
+      <form class="form" action="">
+        <h1 class="text-header">Information student</h1>
+        <div class="form-flex">
+          <label for="">Full name:</label>
+          <input
+            id="fullName"
+            oninput="handleInputfullname()"
+            type="text"
+            placeholder="Enter your fullname"
+          />
+          <p id="errorfullname"></p>
+        </div>
+        <div class="form-flex">
+          <label for="">Email:</label>
+          <input
+            id="email"
+            oninput="handleInputemail()"
+            type="text"
+            placeholder="Enter your email"
+          />
+          <p id="erroremail"></p>
+        </div>
+        <div class="form-flex">
+          <label for="">Number phone:</label>
+          <input
+            id="numberPhone"
+            type="text"
+            placeholder="Enter your numberphone"
+          />
+        </div>
+        <div class="form-flex">
+          <label for="">Address:</label>
+          <input
+            id="address"
+            oninput="handleInputaddress()"
+            type="text"
+            placeholder="Enter your address"
+          />
+          <p id="erroraddress"></p>
+        </div>
+        <div class="form-flex">
+          <label for="">Sex:</label>
+          <div class="form-flex-box">
+            <input type="radio" id="male" name="gender" value="Male" checked />
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" />
+            <label for="Female">Female</label>
+          </div>
+        </div>
+        <div class="btn">
+          <button id="button" onclick="addStudent()">submit</button>
+          <button id="save" style="display: none" onclick="saveStudent()">
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+    <div style="width: 800px; margin: auto">
+      <form>
+        <h1>Student list</h1>
+        <div>
+          <div>Tìm kiếm tên học viên :</div>
+          <input type="text" id="filterStudent" />
+          <div>
+            <button type="button" onclick=" searchStudents()">search</button>
+          </div>
+        </div>
+      </form>
+
+      <table>
+        <tr>
+          <th>#</th>
+          <th>Họ tên</th>
+          <th>Email</th>
+          <th>Điện thoại</th>
+          <th>Địa chỉ</th>
+          <th>Gender</th>
+          <th>Hành động</th>
+          <th>
+            <button onclick="sortByName()">Sắp xếp (alpha)</button>
+          </th>
+        </tr>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </body>
+</html>
+<script src="./index.js"></script>
